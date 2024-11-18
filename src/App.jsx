@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
+import ProjectsPage from './pages/ProjectsPage';
 import ContactPage from './pages/ContactPage';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     <Layout selectedPage={page} onSetPage={setPage}>
 
       {page === 'home' && <HomePage />}
-      {page === 'about' && <AboutPage />}
+      {page === 'projects' && <ProjectsPage />}
       {page === 'contact' && <ContactPage />}
 
     </Layout>
