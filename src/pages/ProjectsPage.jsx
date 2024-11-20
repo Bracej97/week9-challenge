@@ -12,12 +12,18 @@ const ProjectsPage = () => {
     const handleSearch = async () => {
 
       try {
-        const response = await axios.get(`https://api.github.com/users/bracej97/repos`);
+        const response = await axios.get(`https://api.github.com/users/bracej97/repos?per_page=1000`);
 
         // destructure the data from the response
         console.log(response.data);
+        const fullArray = response.data;
+        const filteredArray = fullArray.filter((project) => {
+          const name = project.full_name;
+          return name.includes("challenge");
+      });
+        console.log(filteredArray);
 
-        setProjects(response.data);
+        setProjects(filteredArray);
       } catch (err) {
         setError("Could not retrieve information. Please check the status code.");
         //setStatusInfo(null);
