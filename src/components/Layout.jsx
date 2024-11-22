@@ -4,7 +4,6 @@ import Footer from './Footer';
 const pages = [
   { name: 'Home', key: 'home' },
   { name: 'Projects', key: 'projects' },
-  { name: 'Contact', key: 'contact' },
 ]
 
 const Layout = ({ children, selectedPage, onSetPage }) => {

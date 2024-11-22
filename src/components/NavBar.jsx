@@ -1,7 +1,7 @@
 const NavBar = () => {
     return (
       <nav style={styles.navbar}>
-          <h1>My Amazing App</h1>
+          <h1>Joe Bracey Portfolio</h1>
         </nav>
     )
   }

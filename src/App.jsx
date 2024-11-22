@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
-import ContactPage from './pages/ContactPage';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
 
@@ -15,7 +15,6 @@ function App() {
 
       {page === 'home' && <HomePage />}
       {page === 'projects' && <ProjectsPage />}
-      {page === 'contact' && <ContactPage />}
 
     </Layout>
   );
