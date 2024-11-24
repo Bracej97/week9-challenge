@@ -6,9 +6,11 @@ import axios from 'axios';
 import { motion } from "motion/react"
 
 const ProjectsPage = () => {
+  // Setup projects and error variables
   const [projects, setProjects] = useState([]);
   const [error, setError] = useState(null);
 
+  // API request when the page renders
   useEffect(() => {
     const handleSearch = async () => {
 
@@ -18,6 +20,7 @@ const ProjectsPage = () => {
         // destructure the data from the response
         console.log(response.data);
         const fullArray = response.data;
+        // Filter the array to only include the weekly challenges
         const filteredArray = fullArray.filter((project) => {
           const name = project.name;
           return name.includes("challenge");
@@ -27,13 +30,13 @@ const ProjectsPage = () => {
         setProjects(filteredArray);
       } catch (err) {
         setError("Could not retrieve information. Please check the status code.");
-        //setStatusInfo(null);
       }
     };
 
     handleSearch();
   }, []);
 
+  // return the page including a map funtion to go through the projects array and create a card for each project including the name, language and description
   return (
     <div>
       <h2>Joe's Projects</h2>
@@ -59,6 +62,7 @@ const ProjectsPage = () => {
   );
 };
 
+// inline styles for simplicity
 const styles = {
   container: {
     width: '100%',
