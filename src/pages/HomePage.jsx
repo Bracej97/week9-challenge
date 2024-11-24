@@ -1,6 +1,7 @@
 // HomePage.js
 import React from 'react';
 import picture from '../assets/IMG_7635.jpeg';
+import { motion } from 'motion/react';
 
 const HomePage = () => {
   return (

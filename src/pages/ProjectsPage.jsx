@@ -3,6 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
+import { motion } from "motion/react"
 
 const ProjectsPage = () => {
   const [projects, setProjects] = useState([]);
@@ -45,9 +46,9 @@ const ProjectsPage = () => {
                   <h5 className="card-title">{ project.name }</h5>
                   <h6 className="card-subtitle mb-2 text-body-secondary">{ project.language }</h6>
                   <p className="card-text">{ project.description }</p>
-                  <div style={styles.container}>
-                    <a href={ project.html_url } className="btn btn-primary mr-3" target="_blank">Repo link</a>
-                    { project.has_pages  ? <a href={"https://bracej97.github.io/" + project.name} className="btn btn-secondary" target="_blank">Deployed link</a> : ''}
+                  <div style={styles.buttons}>
+                    <motion.a href={ project.html_url } className="btn btn-primary mr-3" target="_blank" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>Repo link</motion.a>
+                    { project.has_pages  ? <motion.a href={"https://bracej97.github.io/" + project.name} className="btn btn-secondary" target="_blank" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>Deployed link</motion.a> : ''}
                   </div>
                 </div>
             </div>
@@ -66,6 +67,16 @@ const styles = {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'flex-start',
+    alignSelf: 'stretch',
+    gap: '10px',
+  },
+  buttons: {
+    width: '100%',
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
     alignSelf: 'stretch',
     gap: '10px',
   }

@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+
 function App() {
 
   const [page, setPage] = useState('home');
